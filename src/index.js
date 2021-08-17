@@ -18,16 +18,7 @@ const tasks = [{
 }];
 
 function renderList() {
-  const element = document.createElement('ul');
-  const tag = document.createElement('h4');
-  tag.innerText = "Today's to do";
-  element.appendChild(document.createElement('li').appendChild(tag));
-  const field = document.createElement('INPUT');
-  field.setAttribute('type', 'text');
-  field.setAttribute('placeholder', 'Add to your list...');
-  field.id = 'task';
-  field.setAttribute('name', 'task');
-  element.appendChild(document.createElement('li').appendChild(field));
+  const element = document.getElementById('ulTask');
   tasks.forEach((task) => {
     const { description } = task;
     const li = document.createElement('li');
@@ -51,5 +42,4 @@ function renderList() {
 }
 
 const toDoList = document.getElementById('to_do_list');
-
 toDoList.appendChild(renderList());

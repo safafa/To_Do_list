@@ -10,7 +10,7 @@ body {
 }
 
 #task {
-  width: auto;
+  width: 100%;
   border: none;
   border-width: 1px;
   padding: 10px 10px;
