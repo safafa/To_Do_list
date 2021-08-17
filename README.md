@@ -19,6 +19,14 @@ Not deployed yet.
 ### Prerequisites
 
 Knowledge of HTML Semantics CSS And Javascript
+npm
+
+## Getting Started
+
+To get a local copy in your machine:
+
+- clone the repo using git clone
+- Open your terminal and run `npm install` to install the node packages.
 
 
 ## Author
