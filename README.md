@@ -3,6 +3,7 @@
 > In this project, I build a simple To do list using javascript and webpack.
 
 
+![image](https://user-images.githubusercontent.com/43698511/129742051-f2d8371a-e260-4c84-b718-8355a71e41ec.png)
 
 
 This project features ES6, Webpack.
@@ -12,8 +13,7 @@ This project features ES6, Webpack.
 - HTML5, CSS3 and Javascript
 
 ## Live Demo
-
-[Live Demo Link]()
+Not deployed yet.
 
 
 ### Prerequisites
