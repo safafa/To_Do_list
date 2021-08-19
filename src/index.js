@@ -1,7 +1,7 @@
 import 'lodash';
 import './style.css';
 import { checkCompletion, status } from './checkbox.js';
-import { create } from './crud.js';
+import { create, remove } from './crud.js';
 
 function renderList(tasks) {
   const element = document.getElementById('ulTask');
@@ -19,8 +19,11 @@ function renderList(tasks) {
     const span = document.createElement('span');
     span.innerText = ` ${description}`;
     li.appendChild(span);
-    const icon = document.createElement('i');
-    icon.setAttribute('class', 'fas fa-ellipsis-v');
+    const icon = document.createElement('button');
+    icon.className = 'far fa-trash-alt';
+    icon.addEventListener('click', () => {
+      remove(task);
+    });
     li.appendChild(icon);
     element.appendChild(li);
   });
@@ -46,7 +49,7 @@ window.addEventListener('load', () => {
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  let description = document.getElementById('task').value;
+  const description = document.getElementById('task').value;
   create(description);
   window.location.reload();
 });
