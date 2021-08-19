@@ -29,6 +29,7 @@ To get a local copy in your machine:
 
 - clone the repo using git clone
 - Open your terminal and run `npm install` to install the node packages.
+- Run `npm run start` too run the project.
 
 
 ## Author
