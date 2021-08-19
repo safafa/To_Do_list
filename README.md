@@ -13,7 +13,8 @@ This project features ES6, Webpack.
 - HTML5, CSS3 and Javascript
 
 ## Live Demo
-Not deployed yet.
+
+[Live Demo link](https://safafa.github.io/To_Do_list/)
 
 
 ### Prerequisites
