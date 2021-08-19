@@ -13,7 +13,9 @@ This project features ES6, Webpack.
 - HTML5, CSS3 and Javascript
 
 ## Live Demo
-[Live demo link](https://safafa.github.io/To_Do_list/)
+
+[Live Demo link](https://safafa.github.io/To_Do_list/)
+
 
 
 ### Prerequisites
@@ -27,6 +29,7 @@ To get a local copy in your machine:
 
 - clone the repo using git clone
 - Open your terminal and run `npm install` to install the node packages.
+- Run `npm run start` too run the project.
 
 
 ## Author
