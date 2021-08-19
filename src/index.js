@@ -1,7 +1,7 @@
 import 'lodash';
 import './style.css';
 import { checkCompletion, status } from './checkbox.js';
-import { create, remove } from './crud.js';
+import { create, remove, clearCompleted } from './crud.js';
 
 function renderList(tasks) {
   const element = document.getElementById('ulTask');
@@ -30,6 +30,9 @@ function renderList(tasks) {
   const button = document.createElement('button');
   button.id = 'clearAll';
   button.innerText = 'Clear all completed';
+  button.addEventListener('click', () => {
+    clearCompleted(tasks);
+  });
   element.appendChild(document.createElement('li').appendChild(button));
 
   return element;

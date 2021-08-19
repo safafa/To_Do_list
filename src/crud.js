@@ -14,3 +14,12 @@ export const remove = (task) => {
   window.localStorage.setItem('tasks', JSON.stringify(tasks));
   window.location.reload();
 };
+
+export const clearCompleted = (tasks) => {
+  tasks = tasks.filter((task) => !task.completed);
+  tasks.forEach((element) => {
+    element.index = tasks.indexOf(element) + 1;
+  });
+  window.localStorage.setItem('tasks', JSON.stringify(tasks));
+  window.location.reload();
+};
