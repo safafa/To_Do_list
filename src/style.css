@@ -10,7 +10,7 @@ body {
 }
 
 #task {
-  width: 100%;
+  width: 70%;
   border: none;
   border-width: 1px;
   padding: 10px 10px;
@@ -54,5 +54,22 @@ i {
 }
 
 #clearAll:hover {
+  background-color: rgba(136, 136, 136, 0.151);
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#addTask {
+  border: none;
+  color: #888;
+  background-color: white;
+  width: 25%;
+}
+
+#addTask:hover {
   background-color: rgba(136, 136, 136, 0.151);
 }

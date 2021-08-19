@@ -1,6 +1,7 @@
 import 'lodash';
 import './style.css';
 import { checkCompletion, status } from './checkbox.js';
+import { create } from './crud.js';
 
 function renderList(tasks) {
   const element = document.getElementById('ulTask');
@@ -31,25 +32,21 @@ function renderList(tasks) {
   return element;
 }
 
+const toDoList = document.getElementById('to_do_list');
+
 window.addEventListener('load', () => {
+  document.getElementById('form').reset();
   if (JSON.parse(window.localStorage.getItem('tasks')) === null) {
-    window.localStorage.setItem('tasks', JSON.stringify([{
-      description: 'first task',
-      completed: false,
-      index: 0,
-    },
-    {
-      description: 'second task',
-      completed: false,
-      index: 1,
-    },
-    {
-      description: 'third task',
-      completed: false,
-      index: 2,
-    }]));
+    window.localStorage.setItem('tasks', JSON.stringify([]));
   }
   const tasks = JSON.parse(window.localStorage.getItem('tasks'));
-  const toDoList = document.getElementById('to_do_list');
+  toDoList.removeChild(toDoList.firstChild);
   toDoList.appendChild(renderList(tasks));
+});
+
+document.getElementById('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  let description = document.getElementById('task').value;
+  create(description);
+  window.location.reload();
 });
