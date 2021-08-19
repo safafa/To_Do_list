@@ -7,7 +7,10 @@ export const create = (description) => {
 
 export const remove = (task) => {
   const tasks = JSON.parse(window.localStorage.getItem('tasks'));
-  tasks.splice(tasks.indexOf(task), 1);
+  tasks.splice(task.index - 1, 1);
+  tasks.forEach((element) => {
+    element.index = tasks.indexOf(element) + 1;
+  });
   window.localStorage.setItem('tasks', JSON.stringify(tasks));
   window.location.reload();
 };
