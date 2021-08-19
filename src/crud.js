@@ -23,3 +23,10 @@ export const clearCompleted = (tasks) => {
   window.localStorage.setItem('tasks', JSON.stringify(tasks));
   window.location.reload();
 };
+
+export const edit = (task, description) => {
+  const tasks = JSON.parse(window.localStorage.getItem('tasks'));
+  tasks[task.index - 1].description = description;
+  window.localStorage.setItem('tasks', JSON.stringify(tasks));
+  window.location.reload();
+};

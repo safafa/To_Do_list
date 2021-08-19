@@ -1,7 +1,9 @@
 import 'lodash';
 import './style.css';
 import { checkCompletion, status } from './checkbox.js';
-import { create, remove, clearCompleted } from './crud.js';
+import {
+  create, remove, clearCompleted, edit,
+} from './crud.js';
 
 function renderList(tasks) {
   const element = document.getElementById('ulTask');
@@ -19,8 +21,19 @@ function renderList(tasks) {
     const span = document.createElement('span');
     span.innerText = ` ${description}`;
     li.appendChild(span);
+    span.addEventListener('dblclick', () => {
+      span.setAttribute('contenteditable', 'true');
+    });
+    span.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        edit(task, span.innerText);
+      }
+    });
     const icon = document.createElement('button');
     icon.className = 'far fa-trash-alt';
+    icon.style.backgroundColor = 'white';
+    icon.style.border = 'none';
+    icon.style.color = '#888';
     icon.addEventListener('click', () => {
       remove(task);
     });
